@@ -1,8 +1,9 @@
-<h1>Mis solicitudes</h1>
+<h1>Mis solicitudes rechazadas</h1>
 
 <table class="table table-bordered table-striped table-condensed table-hover smart-form has-tickbox">
   <thead>
     <tr>
+      <th>ID</th>
       <th>Nombre</th>
       <th>Producto</th>
       <th>Npro</th>
@@ -18,6 +19,7 @@
     <% @requests.each do |request| %>
         <% if current_user.id == request.idus %>
       <tr>
+        <td><%= request.id %></td>
         <td><%= request.nombre %></td>
         <td><%= request.producto %></td>
         <td><%= request.npro %></td>

@@ -3,13 +3,10 @@
 <table class="table table-bordered table-striped table-condensed table-hover smart-form has-tickbox">
   <thead>
     <tr>
+      <th>ID</th>
       <th>Nombre</th>
-      <th>Teléfono</th>
-      <th>Móvil</th>
       <th>Producto</th>
       <th># producto</th>
-      <th>Dirección</th>
-      <th>Email</th>
       <th>Estado</th>
       <th>Tipo solicitud</th>
       <th colspan="2">Opciones</th>
@@ -20,19 +17,24 @@
     <% @requests.each do |request| %>
       <% if request.estado == 0  %>
       <tr>
+        <td><%= request.id %></td>
         <td><%= request.nombre %></td>
-        <td><%= request.telefono %></td>
-        <td><%= request.movil %></td>
         <td><%= request.producto %></td>
         <td><%= request.npro %></td>
-        <td><%= request.direccion %></td>
-        <td><%= request.email %></td>
         <td><%= estados(request.estado) %></td>
         <td><%= tipo(request.tiposoli) %></td>
-        <td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#mynewpost">
+        <td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reclamar<%= request.id%>">
         Reclamar
       </button></td>
-      <div class="modal fade" id="mynewpost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+
+        <td>
+
+    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#eliminar<%= request.id%>">
+        Eliminar
+      </button>
+
+      </td>
+<div class="modal fade" id="reclamar<%= request.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -40,24 +42,16 @@
           <h4 class="modal-title" id="myModalLabel">Reclamar solicitud</h4>
         </div>
         <div class="modal-body">
-        <h4>Estas seguro?</h4>  
+        <h4>Estas seguro? <%= request.id %> </h4>  
         <div class="modal-footer">
-          <button onclick="window.location.href='<%= request_reclamar_path(request) %>'" method="post" class="btn btn-primary btn-sm">Reclamar</button>
+          <button onclick="window.location.href='<%= request_reclamar_path(request) %>'" method="put" class="btn btn-primary btn-sm">Reclamar</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
         </div>
       </div>
     </div>
   </div>
   </div>
-        <td>
-
-    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#mynewpost2">
-        Eliminar
-      </button>
-
-      </td>
-
-<div class="modal fade" id="mynewpost2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal fade" id="eliminar<%= request.id%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -74,6 +68,8 @@
     </div>
   </div>
   </div>
+
+
 
 
        
