@@ -16,3 +16,9 @@
 a.visited {
     color:red;
 }
+.ocultar{
+	position: absolute;
+    right: 10px;
+    width: 30%;
+    z-index: 9999;
+}
