@@ -1,6 +1,7 @@
 class RequestsController < ApplicationController
   before_action :set_request, only: [:show, :edit, :update, :destroy]
    before_action :validar, except: [:show]
+    skip_before_filter :verify_authenticity_token  
   # GET /requests
   # GET /requests.json
   def index

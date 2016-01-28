@@ -1,6 +1,7 @@
 class RegistrosController < ApplicationController
   before_action :set_registro, only: [:show, :edit, :update, :destroy]
   before_action :validar
+  skip_before_filter :verify_authenticity_token  
   # GET /registros
   # GET /registros.json
   def index

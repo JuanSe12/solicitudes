@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     	redirect_to root_path
    	else
     session[:usuario_id] = usuario.id
+    flash[:notice] = "Bienvenid@."
     redirect_to root_path
     end
     
