@@ -5083,3 +5083,57 @@ Started GET "/assets/favicon/favicon.ico" for 127.0.0.1 at 2016-01-28 10:48:00 -
 
 
 Started GET "/assets/favicon/favicon.ico" for 127.0.0.1 at 2016-01-28 10:48:00 -0500
+  [1m[36m (6.3ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (32.8ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateRequests (20151228054038)
+  [1m[35m (5.3ms)[0m  CREATE TABLE `requests` (`id` int(11) auto_increment PRIMARY KEY, `nombre` varchar(255), `telefono` varchar(255), `movil` varchar(255), `producto` varchar(255), `npro` int(11), `direccion` varchar(255), `email` varchar(255), `estado` int(11), `idus` int(11), `tiposoli` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20151228054038')
+  [1m[36m (2.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsuarios (20160127180157)
+  [1m[35m (5.0ms)[0m  CREATE TABLE `usuarios` (`id` int(11) auto_increment PRIMARY KEY, `provider` varchar(255), `uid` varchar(255), `name` varchar(255), `oauth_token` varchar(255), `oauth_expires_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160127180157')
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRegistros (20160128000848)
+  [1m[35m (5.0ms)[0m  CREATE TABLE `registros` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160128000848')
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+Migrating to AddEmailToUsuarios (20160128005743)
+  [1m[35m (11.6ms)[0m  ALTER TABLE `usuarios` ADD `email` varchar(255)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20160128005743')
+  [1m[36m (2.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'db_dev_requestmng'
+  AND fk.table_name = 'registros'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `registros`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'db_dev_requestmng'
+  AND fk.table_name = 'requests'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `requests`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'db_dev_requestmng'
+  AND fk.table_name = 'usuarios'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `usuarios`

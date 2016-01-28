@@ -13,13 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160128005743) do
 
-  create_table "pruebas", force: :cascade do |t|
-    t.string   "nombre",     limit: 255
-    t.string   "edad",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
   create_table "registros", force: :cascade do |t|
     t.string   "email",      limit: 255
     t.datetime "created_at",             null: false
