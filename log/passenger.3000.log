@@ -1,0 +1,46 @@
+[ 2016-01-28 10:47:28.3848 3396/7f39b633c780 age/Wat/WatchdogMain.cpp:1276 ]: Starting Passenger watchdog...
+[ 2016-01-28 10:47:28.3881 3399/7f34efb63780 age/Cor/CoreMain.cpp:957 ]: Starting Passenger core...
+[ 2016-01-28 10:47:28.3882 3399/7f34efb63780 age/Cor/CoreMain.cpp:234 ]: Passenger core running in multi-application mode.
+[ 2016-01-28 10:47:28.3900 3399/7f34efb63780 age/Cor/CoreMain.cpp:707 ]: Passenger core online, PID 3399
+[ 2016-01-28 10:47:28.3952 3407/7fc6fe0d5780 age/Ust/UstRouterMain.cpp:504 ]: Starting Passenger UstRouter...
+[ 2016-01-28 10:47:28.3955 3407/7fc6fe0d5780 age/Ust/UstRouterMain.cpp:317 ]: Passenger UstRouter online, PID 3407
+App 3452 stdout: 
+App 3530 stdout: 
+App 3585 stdout: 
+App 3593 stdout: 
+App 3600 stdout: 
+App 3615 stdout: 
+App 3625 stdout: 
+
+
+[ 2016-01-28 10:48:25.3469 3399/7f34edb1a700 age/Cor/CoreMain.cpp:507 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ 2016-01-28 10:48:25.3469 3407/7fc6f7fff700 age/Ust/UstRouterMain.cpp:397 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ 2016-01-28 10:48:25.3469 3407/7fc6fe0d5780 age/Ust/UstRouterMain.cpp:467 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ 2016-01-28 10:48:25.3469 3399/7f34efb63780 age/Cor/CoreMain.cpp:876 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ 2016-01-28 10:48:25.3470 3399/7f34efb63780 age/Cor/CoreMain.cpp:794 ]: Disconnecting long-running connections for process 3530, application /home/john/Escritorio/solicitudes/public (development)
+[ 2016-01-28 10:48:25.3470 3407/7fc6f7fff700 Ser/Server.h:444 ]: [UstRouter] Shutdown finished
+[ 2016-01-28 10:48:25.3471 3407/7fc6f77fe700 Ser/Server.h:759 ]: [UstRouterApiServer] Freed 0 spare client objects
+[ 2016-01-28 10:48:25.3471 3399/7f34efb63780 age/Cor/CoreMain.cpp:794 ]: Disconnecting long-running connections for process 3585, application /home/john/Escritorio/solicitudes/public (development)
+[ 2016-01-28 10:48:25.3471 3407/7fc6f77fe700 Ser/Server.h:444 ]: [UstRouterApiServer] Shutdown finished
+[ 2016-01-28 10:48:25.3471 3399/7f34efb63780 age/Cor/CoreMain.cpp:794 ]: Disconnecting long-running connections for process 3593, application /home/john/Escritorio/solicitudes/public (development)
+[ 2016-01-28 10:48:25.3472 3399/7f34efb63780 age/Cor/CoreMain.cpp:794 ]: Disconnecting long-running connections for process 3600, application /home/john/Escritorio/solicitudes/public (development)
+[ 2016-01-28 10:48:25.3473 3399/7f34efb63780 age/Cor/CoreMain.cpp:794 ]: Disconnecting long-running connections for process 3615, application /home/john/Escritorio/solicitudes/public (development)
+[ 2016-01-28 10:48:25.3474 3399/7f34efb63780 age/Cor/CoreMain.cpp:794 ]: Disconnecting long-running connections for process 3625, application /home/john/Escritorio/solicitudes/public (development)
+[ 2016-01-28 10:48:25.3477 3399/7f34edb1a700 Ser/Server.h:759 ]: [ServerThr.1] Freed 128 spare client objects
+[ 2016-01-28 10:48:25.3478 3399/7f34edb1a700 Ser/Server.h:444 ]: [ServerThr.1] Shutdown finished
+[ 2016-01-28 10:48:25.3479 3399/7f34c77fe700 Ser/Server.h:759 ]: [ApiServer] Freed 0 spare client objects
+[ 2016-01-28 10:48:25.3480 3399/7f34c77fe700 Ser/Server.h:444 ]: [ApiServer] Shutdown finished
+[ 2016-01-28 10:48:25.3480 3399/7f34eca16700 Ser/Server.h:759 ]: [ServerThr.3] Freed 128 spare client objects
+[ 2016-01-28 10:48:25.3481 3399/7f34eca16700 Ser/Server.h:444 ]: [ServerThr.3] Shutdown finished
+[ 2016-01-28 10:48:25.3482 3399/7f34c7fff700 Ser/Server.h:759 ]: [ServerThr.4] Freed 128 spare client objects
+[ 2016-01-28 10:48:25.3482 3399/7f34c7fff700 Ser/Server.h:444 ]: [ServerThr.4] Shutdown finished
+[ 2016-01-28 10:48:25.3483 3399/7f34ed298700 Ser/Server.h:759 ]: [ServerThr.2] Freed 128 spare client objects
+[ 2016-01-28 10:48:25.3483 3399/7f34ed298700 Ser/Server.h:444 ]: [ServerThr.2] Shutdown finished
+[ 2016-01-28 10:48:25.3484 3399/7f34efb63780 age/Cor/CoreMain.cpp:794 ]: Disconnecting long-running connections for process 3530, application /home/john/Escritorio/solicitudes/public (development)
+[ 2016-01-28 10:48:25.3485 3399/7f34efb63780 age/Cor/CoreMain.cpp:794 ]: Disconnecting long-running connections for process 3585, application /home/john/Escritorio/solicitudes/public (development)
+[ 2016-01-28 10:48:25.3486 3399/7f34efb63780 age/Cor/CoreMain.cpp:794 ]: Disconnecting long-running connections for process 3593, application /home/john/Escritorio/solicitudes/public (development)
+[ 2016-01-28 10:48:25.3486 3407/7fc6fe0d5780 age/Ust/UstRouterMain.cpp:498 ]: Passenger UstRouter shutdown finished
+[ 2016-01-28 10:48:25.3487 3399/7f34efb63780 age/Cor/CoreMain.cpp:794 ]: Disconnecting long-running connections for process 3600, application /home/john/Escritorio/solicitudes/public (development)
+[ 2016-01-28 10:48:25.3487 3399/7f34efb63780 age/Cor/CoreMain.cpp:794 ]: Disconnecting long-running connections for process 3615, application /home/john/Escritorio/solicitudes/public (development)
+[ 2016-01-28 10:48:25.3487 3399/7f34efb63780 age/Cor/CoreMain.cpp:794 ]: Disconnecting long-running connections for process 3625, application /home/john/Escritorio/solicitudes/public (development)
+[ 2016-01-28 10:48:25.6625 3399/7f34efb63780 age/Cor/CoreMain.cpp:942 ]: Passenger core shutdown finished
