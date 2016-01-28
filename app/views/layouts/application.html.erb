@@ -59,7 +59,7 @@
 </head>
 <body class="">
 
-<% if user_signed_in?  %>
+<% if current_user  %>
 <!-- #HEADER -->
 		<header id="header">
 			<div id="logo-group">
@@ -147,10 +147,10 @@
 
 				<!-- logout button -->
 				<div id="logout" class="btn-header transparent pull-right">
-					<% if user_signed_in? %>
-						<span> <a href="<%= destroy_user_session_path  %>" data-method='delete' title="Salir" data-action="userLogout" data-logout-msg=""><i class="fa fa-sign-out"></i></a> </span>
+					<% if current_user %>
+						<span> <a href="<%=  signout_path %>" data-method='delete' title="Salir" data-action="userLogout" data-logout-msg="" id="sign_out"><i class="fa fa-sign-out"></i></a> </span>
 					<% else %>
-						<span> <a href="<%= new_user_session_path  %>"  title="Entrar" data-action="userLogout" data-logout-msg=""><i class="fa fa-sign-out"></i></a> </span>
+						<span> <a href="/auth/google_oauth2" id="sign_in" title="Entrar" data-action="userLogout" data-logout-msg=""><i class="fa fa-sign-out"></i></a> </span>
 					<% end %>
 				</div>
 				<!-- end logout button -->
@@ -236,12 +236,7 @@
 				<span id="logo"> <img src="../../assets/logo.png" alt="SmartAdmin"> </span>
 			</div>
 
-		<% if request.path ==  new_user_session_path %>
-			<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-				<span id="extr-page-header-space"> <span class="hidden-mobile hidden-xs">Need an account?</span> 
-		     	<%= link_to "Crear cuenta", new_registration_path(resource_name),  class: "btn btn-danger" %><br /> </span>
-    		<% end -%>
-		 <% end %>
+			<span id="extr-page-header-space"> <span class="hidden-mobile hidden-xs">Need an account?</span> <a href="#" class="btn btn-danger">Create account</a> </span>
 
 		</header>
 		<% end %>
@@ -259,7 +254,7 @@
 					<a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
 						<img src="../../assets/avatars/sunny.png" alt="me" class="online" /> 
 						<span>
-							<%= current_user.nombre %> 
+							<%= current_user.name %> 
 						</span>
 						<i class="fa fa-angle-down"></i>
 					</a> 

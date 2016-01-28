@@ -65,8 +65,8 @@
       <textarea rows="5" cols="70" id="observaciones"></textarea>
     </section>
     <footer class="col col-sm-12">
-      <b><i><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#aceptar">Aceptar</button></i></b>
-      <b><i><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#rechazar">Rechazar</button></i></b>
+      <b><i><button type="button" class="btn btn-default" data-toggle="modal" data-target="#aceptar">Aceptar</button></i></b>
+      <b><i><button type="button" class="btn btn-default" data-toggle="modal" data-target="#rechazar">Rechazar</button></i></b>
       <b><i><button class="btn btn-default" >Escalar </button></i></b>
       <b><i><button onclick="window.location.href='<%= index_misrequests_path %>'" method="get" class="btn btn-default" >Atrás </button></i></b>
 <!-- Modal Aceptar-->
@@ -80,7 +80,7 @@
         <div class="modal-body">
         <h4>Estas seguro?</h4>  
         <div class="modal-footer">
-          <button onclick="window.location.href='<%= request_aceptar_path(@request) %>'" method="put" class="btn btn-primary btn-sm">Aceptar</button>
+          <button onclick="window.location.href='<%= request_aceptar_path(@request) %>'" method="put" class="btn btn-default btn-sm">Aceptar</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
         </div>
       </div>
@@ -99,7 +99,7 @@
         <div class="modal-body">
         <h4>Estas seguro?</h4>  
         <div class="modal-footer">
-          <button onclick="window.location.href='<%= request_rechazar_path(@request) %>'" method="put" class="btn btn-warning btn-sm">Rechazar</button>
+          <button onclick="window.location.href='<%= request_rechazar_path(@request) %>'" method="put" class="btn btn-default btn-sm">Rechazar</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
         </div>
       </div>

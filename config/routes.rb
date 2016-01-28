@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  resources :requests
-  resources :pruebas
-  devise_for :users
+
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
+  resources :requests#, :path => 'requests?estado=registrada'
+  #devise_for :users
   get 'index/index'
   get 'index/tablerocomando'
   get 'index/organigrama'
@@ -9,7 +13,7 @@ Rails.application.routes.draw do
     get 'index/aceptados'
       get 'index/rechazados'
   
- 
+# get 'request/:id', :action => 'show', :via => [:get], :controller => "requests"
  resources :requests do
    match 'reclamar', :action => 'reclamar', :controller => 'requests', :via => [:get]
    match 'aceptar', :action => 'aceptar', :controller => 'requests', :via => [:get]
@@ -29,9 +33,15 @@ end
     end
   end
 
-  devise_scope :user do
-    get '/users/sign_out' => 'devise/sessions#destroy'
-  end
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  get 'signout', to: 'sessions#destroy', as: 'signout'
+
+  resources :sessions, only: [:create, :destroy]
+
+  #devise_scope :user do
+   # get '/users/sign_out' => 'devise/sessions#destroy'
+  #end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

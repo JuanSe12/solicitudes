@@ -17,7 +17,7 @@
 
   <tbody>
     <% @requests.each do |request| %>
-        <% if current_user.id == request.idus %>
+        <%# if current_user.id == request.idus %>
       <tr>
         <td><%= request.id %></td>
         <td><%= request.nombre %></td>
@@ -29,7 +29,7 @@
         <td><%= tipo(request.tiposoli) %></td>
         <td><%= button_to 'Ver', request, method: :get ,class: "btn btn-default btn-sm"  %></td>
       </tr>
-      <% end %>
+      <%# end %>
     <% end %>
   </tbody>
 </table>

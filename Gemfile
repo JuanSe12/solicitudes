@@ -51,3 +51,5 @@ end
 gem 'devise'
 gem 'will_paginate'    
 gem 'will_paginate-bootstrap'
+
+gem "omniauth-google-oauth2", "~> 0.2.1"

@@ -61,7 +61,7 @@ class RequestsController < ApplicationController
   def reclamar
    # redirect_to requests_path(request_id)
    @request = Request.find(params[:request_id])
-    @request.idus = current_user.id
+    #@request.idus = current_user.id
     @request.estado = 1
     respond_to do |format|
       if @request.save
@@ -79,7 +79,7 @@ class RequestsController < ApplicationController
   def aceptar
    # redirect_to requests_path(request_id)
    @request = Request.find(params[:request_id])
-    @request.idus = current_user.id
+    #@request.idus = current_user.id
     @request.estado = 2
    respond_to do |format|
       if @request.save
@@ -97,7 +97,7 @@ class RequestsController < ApplicationController
   def rechazar
    # redirect_to requests_path(request_id)
    @request = Request.find(params[:request_id])
-    @request.idus = current_user.id
+   # @request.idus = current_user.id
     @request.estado = 3
     respond_to do |format|
       if @request.save
