@@ -9,13 +9,13 @@
       <th># producto</th>
       <th>Estado</th>
       <th>Tipo solicitud</th>
+      <th>Tiempo de creación</th>
       <th colspan="1">Opciones</th>
     </tr>
   </thead>
-
   <tbody>
     <% @requests.each do |request| %>
-      <% if request.estado == 0  %>
+      <% if request.estado == 0 %>
       <tr>
         <td><%= request.id %></td>
         <td><%= request.nombre %></td>
@@ -23,6 +23,7 @@
         <td><%= request.npro %></td>
         <td><%= estados(request.estado) %></td>
         <td><%= tipo(request.tiposoli) %></td>
+        <td><%= time_ago_in_words(request.created_at) %></td>
         <td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#reclamar<%= request.id%>">
         Reclamar
       </button></td>
@@ -62,6 +63,7 @@
   </div>
       </tr>
       <% end %>
+   
     <% end %>
   </tbody>
 </table>

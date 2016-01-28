@@ -13,9 +13,9 @@ module RequestsHelper
     end
     def tipo(t)
         if t == 1
-            "<p>Crear cuenta</p>".html_safe
+            "Crear cuenta".html_safe
         elsif t == 2
-            "<p>Cambiar contraseña</p>".html_safe
+            "Cambiar contraseña".html_safe
         end
     
     end

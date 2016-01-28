@@ -5,7 +5,8 @@ class Usuario < ActiveRecord::Base
       usuario.uid      = auth.uid
       usuario.name     = auth.info.name
     #   usuario.image_url = auth_hash['info']['image']
-      usuario.image = auth.info.image
+      #usuario.image = auth.info.image
+      usuario.email = auth.info.email
       usuario.save
     end
   end

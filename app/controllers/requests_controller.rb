@@ -1,10 +1,10 @@
 class RequestsController < ApplicationController
   before_action :set_request, only: [:show, :edit, :update, :destroy]
-
+   before_action :validar, except: [:show]
   # GET /requests
   # GET /requests.json
   def index
-    @requests = Request.where(:estado => 0).paginate(:page => params[:page], :per_page => 8)
+    @requests = Request.where(:estado => 0 ).paginate(:page => params[:page], :per_page => 8)
     @request = Request.new
   end
 
@@ -23,7 +23,11 @@ class RequestsController < ApplicationController
   def edit
   end
   
-  
+  def validar
+    if session[:usuario_id] == nil
+      redirect_to root_path
+    end
+  end
       
 
   # POST /requests
@@ -61,7 +65,7 @@ class RequestsController < ApplicationController
   def reclamar
    # redirect_to requests_path(request_id)
    @request = Request.find(params[:request_id])
-    #@request.idus = current_user.id
+    @request.idus = current_user.id
     @request.estado = 1
     respond_to do |format|
       if @request.save
@@ -79,7 +83,7 @@ class RequestsController < ApplicationController
   def aceptar
    # redirect_to requests_path(request_id)
    @request = Request.find(params[:request_id])
-    #@request.idus = current_user.id
+    @request.idus = current_user.id
     @request.estado = 2
    respond_to do |format|
       if @request.save
@@ -97,7 +101,7 @@ class RequestsController < ApplicationController
   def rechazar
    # redirect_to requests_path(request_id)
    @request = Request.find(params[:request_id])
-   # @request.idus = current_user.id
+   @request.idus = current_user.id
     @request.estado = 3
     respond_to do |format|
       if @request.save
@@ -122,7 +126,6 @@ class RequestsController < ApplicationController
       format.js
     end
   end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_request

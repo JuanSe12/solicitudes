@@ -1,7 +1,8 @@
 class IndexController < ApplicationController
+
   #before_action :authenticate_user!
   def index
-   
+    @usuarios = Usuario.all
   end
   def tablerocomando
     
@@ -10,12 +11,24 @@ class IndexController < ApplicationController
     
   end
   def misrequests
-    @requests = Request.where(:estado => 1).paginate(:page => params[:page], :per_page => 7)
+    if session[:usuario_id] == nil
+      redirect_to root_path
+    else
+    @requests = Request.where(:estado => 1, :idus => current_user.id ).paginate(:page => params[:page], :per_page => 7)
+    end
   end
   def aceptados
-    @requests = Request.where(:estado => 2).paginate(:page => params[:page], :per_page => 7)
+     if session[:usuario_id] == nil
+      redirect_to root_path
+    else
+    @requests = Request.where(:estado => 2, :idus => current_user.id).paginate(:page => params[:page], :per_page => 7)
+    end
   end
   def rechazados
-    @requests = Request.where(:estado => 3).paginate(:page => params[:page], :per_page => 7)
+     if session[:usuario_id] == nil
+      redirect_to root_path
+    else
+    @requests = Request.where(:estado => 3, :idus => current_user.id).paginate(:page => params[:page], :per_page => 7)
+    end
   end
 end

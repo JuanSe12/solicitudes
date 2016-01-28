@@ -5,65 +5,38 @@
   </header>
   <fieldset class="col col-sm-12">
     <header style="text-decoration: underline;">
-      <h6>
+      <h6 class="lead">
         <b><i>Datos cliente</i></b>
       </h6>
     </header>
     <section>
-      <b><i>Fecha de solicitud:&nbsp;&nbsp;<span>&nbsp;&nbsp;<%= @request.created_at.strftime("%m/%d/%Y") %></span></i></b>
+      <b><i>Fecha de solicitud:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.created_at.strftime("%d/%m/%Y") %></span></i>
     </section>
     <section>
-      <b><i>Nombre completo:&nbsp;&nbsp;<span>&nbsp;&nbsp; <%= @request.nombre %></span></i></b>
+      <b><i>Nombre completo:&nbsp;&nbsp;<span>&nbsp;&nbsp; </b><%= @request.nombre %></span></i>
     </section>
     <section>
-      <b><i>Telefono:&nbsp;&nbsp;<span>&nbsp;&nbsp;<%= @request.telefono %>&nbsp;&nbsp;</span></i></b>
-      <b><i>&nbsp;&nbsp;Celular:&nbsp;&nbsp;<span>&nbsp;&nbsp;<%= @request.movil %>&nbsp;&nbsp;</span></i></b>
+      <b><i>Telefono:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.telefono %>&nbsp;&nbsp;</span></i>
+      <b><i>&nbsp;&nbsp;Celular:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.movil %>&nbsp;&nbsp;</span></i>
     </section>
     <section>
-      <b><i>Producto:&nbsp;&nbsp;<span>&nbsp;&nbsp;<%= @request.producto %></span></i></b>
+      <b><i>Producto:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.producto %></span></i>
     </section>
     <section>
-      <b><i>Numero de producto:&nbsp;&nbsp;<span>&nbsp;&nbsp;<%= @request.npro %></span></i></b>
+      <b><i>Numero de producto:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.npro %></span></i>
     </section>
     <section>
-      <b><i>Dirección:&nbsp;&nbsp;<span>&nbsp;&nbsp;<%= @request.direccion %></span></i></b>
+      <b><i>Dirección:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.direccion %></span></i>
     </section>
     <section>
-      <b><i>Email:&nbsp;&nbsp;<span>&nbsp;&nbsp;<%= @request.email %></span></i></b>
+      <b><i>Email:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.email %></span></i>
     </section>
     <section>
-      <b><i>Estado actual:&nbsp;&nbsp;<span>&nbsp;&nbsp;<%= estados(@request.estado) %></span></i></b>
+      <b><i>Estado actual:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= estados(@request.estado) %></span></i>
     </section> 
+<% if current_user  %>
 <section class="col col-sm-12"><hr width="50%" align="left" style="color: silver;; border: solid 1px;" ></section>
- 
-    <section class="col col-sm-12">
-      <div class="col col-sm-1">
-        <label class="checkbox"> <input name="checkbox-inline"
-          type="checkbox" id="evidente"> <b><i>Evidente?</i></b></label>
-      </div>
-      <div class="col col-sm-2">
-        <label class="input">
-            <input type="date" id="fecha" placeholder="Fecha DD/MM/AAAA">
-        </label>
-      </div>
-      <div class="col col-sm-2">
-        <label class="input">
-            <input type="text" id="preg" placeholder="Preguntas correctas">
-        </label>
-      </div>
-    </section>
-    <section class="col col-sm-12">
-      <div class="col col-sm-3">
-        <label class="checkbox"> <input name="checkbox-inline"
-          type="checkbox" id="bd"> <b><i>En la base de datos coorporativa</i></b></label>
-      </div>
-      <div class="col col-sm-9">
-        <input type="date" id="fech2" placeholder="Fecha DD/MM/AAAA">
-      </div>
-    </section>
-    <section class="col col-sm-12">
-      <textarea rows="5" cols="70" id="observaciones"></textarea>
-    </section>
+
     <footer class="col col-sm-12">
       <b><i><button type="button" class="btn btn-default" data-toggle="modal" data-target="#aceptar">Aceptar</button></i></b>
       <b><i><button type="button" class="btn btn-default" data-toggle="modal" data-target="#rechazar">Rechazar</button></i></b>
@@ -111,6 +84,6 @@
 
 
     </footer>
-
+<% end %>
   </fieldset>
 

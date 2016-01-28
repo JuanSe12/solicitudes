@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :registros, :path => 'usuarios'
   get 'sessions/create'
 
   get 'sessions/destroy'
@@ -28,7 +29,7 @@ end
       match 'request/contra', :action => 'contra', :via => [:get], :controller => "requests", :as => :mcontra
       match 'request/registrados', :action => 'registrado', :via => [:get], :controller => "requests", :as => :registrados
       match 'request/misrequests', :action => 'mirequest', :via => [:get], :controller => "requests", :as => :misrequests
-      match 'request/create', :action => 'create', :via => [:get], :controller => "requests", :as => :create
+      match 'request/create', :action => 'create', :via => [:post], :controller => "requests", :as => :create
     #  match 'request/err', :action => 'err', :via => [:get], :controller => "requests", :as => :errores
     end
   end

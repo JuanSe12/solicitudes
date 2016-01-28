@@ -6,7 +6,7 @@ module Api
                 "Codigo: EXI002 - Procesado con éxito"
               end
             end
-      
+       skip_before_action :verify_authenticity_token
       respond_to :json 
 
       def index
@@ -65,7 +65,7 @@ module Api
             redirect_to requests_path
           else
             flash[:notice] = "Codigo: EXI002 - Procesado con éxito"
-            redirect_to requests_path
+            redirect_to request_path(@request)
           end 
         end
         #respond_with Request.create(params[:request])
