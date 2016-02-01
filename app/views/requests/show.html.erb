@@ -36,12 +36,21 @@
     </section> 
 <% if current_user  %>
 <section class="col col-sm-12"><hr width="50%" align="left" style="color: silver;; border: solid 1px;" ></section>
+  <section>
+      <% if @request.observacion == nil || @request.observacion == "" %>
+        <b><i>Observaciones:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b>Ninguna.</span></i>
+      <% else %>
+        <b><i>Observaciones:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.observacion %></span></i>
+      <% end %>
+    </section><br>
 
     <footer class="col col-sm-12">
       <b><i><button type="button" class="btn btn-default" data-toggle="modal" data-target="#aceptar">Aceptar</button></i></b>
-      <b><i><button type="button" class="btn btn-default" data-toggle="modal" data-target="#rechazar">Rechazar</button></i></b>
+      <b><i><button  type="button" class="btn btn-default" data-toggle="modal" data-target="#rechazar">Rechazar</button></i></b>
       <b><i><button class="btn btn-default" >Escalar </button></i></b>
       <b><i><button onclick="window.location.href='<%= index_misrequests_path %>'" method="get" class="btn btn-default" >Atrás </button></i></b>
+
+
 <!-- Modal Aceptar-->
 <div class="modal fade" id="aceptar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
@@ -51,10 +60,19 @@
           <h4 class="modal-title" id="myModalLabel">Aceptar solicitud</h4>
         </div>
         <div class="modal-body">
-        <h4>Estas seguro?</h4>  
+        <h4>Estas seguro?</h4> 
+          <form action="http://localhost:3000/api/v1/request/actualiza" method="put">
+            <input type="text" name="id" style="display:none" value="<%= @request.id %>" />
+              <b><i>Observaciones:&nbsp;&nbsp;</i></b>
+            <section>
+              <textarea rows="5" cols="50" name="observacion"></textarea>
+            </section>
+        
         <div class="modal-footer">
-          <button onclick="window.location.href='<%= request_aceptar_path(@request) %>'" method="put" class="btn btn-default btn-sm">Aceptar</button>
+        <input type="text" name="estado" style="display:none" value="2"/>
+          <button method="put"class="btn btn-default btn-sm">Aceptar</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+           </form>
         </div>
       </div>
     </div>
@@ -70,20 +88,26 @@
           <h4 class="modal-title" id="myModalLabel">Rechazar solicitud</h4>
         </div>
         <div class="modal-body">
-        <h4>Estas seguro?</h4>  
+        <h4>Estas seguro?</h4>
+          <form action="http://localhost:3000/api/v1/request/actualiza" method="put">
+    <input type="text" name="id" style="display:none" value="<%= @request.id %>" />
+    <b><i>Observaciones:&nbsp;&nbsp;</i></b>
+    <section>
+      <textarea rows="5" cols="50" name="observacion"></textarea>
+    </section>
+       
         <div class="modal-footer">
-          <button onclick="window.location.href='<%= request_rechazar_path(@request) %>'" method="put" class="btn btn-default btn-sm">Rechazar</button>
+        <input type="text" name="estado" style="display:none" value="3"/>
+          <button  method="put" class="btn btn-default btn-sm">Rechazar</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            </form>
         </div>
       </div>
     </div>
   </div>
   </div>
-<!-- Fin modal-->
 <%#= link_to 'Edit', edit_request_path(@request) %> 
-
-
+</form>
     </footer>
 <% end %>
   </fieldset>
-

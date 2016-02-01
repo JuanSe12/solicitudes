@@ -24,6 +24,15 @@ module Api
         
       end
 
+      def actualiza
+        request = Request.find(params[:id])
+        request.observacion = params[:observacion]
+        request.estado =  params[:estado]
+        request.save
+        flash[:notice] = "Codigo: EXI002 - Procesado con éxito"
+        redirect_to request_path(request)
+      end
+
       def create
         @request = Request.new
         if params[:nombre] != nil || params[:telefono] != nil || params[:movil] != nil || params[:producto] != nil || params[:npro] != nil || params[:direccion] != nil || params[:email] != nil || params[:tiposoli] != nil

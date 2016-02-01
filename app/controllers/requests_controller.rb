@@ -1,7 +1,6 @@
 class RequestsController < ApplicationController
   before_action :set_request, only: [:show, :edit, :update, :destroy]
    before_action :validar, except: [:show]
-    skip_before_filter :verify_authenticity_token  
   # GET /requests
   # GET /requests.json
   def index
@@ -19,6 +18,8 @@ class RequestsController < ApplicationController
   def new
     
   end
+
+
 
   # GET /requests/1/edit
   def edit
@@ -81,41 +82,7 @@ class RequestsController < ApplicationController
     end
   end
 
-  def aceptar
-   # redirect_to requests_path(request_id)
-   @request = Request.find(params[:request_id])
-    @request.idus = current_user.id
-    @request.estado = 2
-   respond_to do |format|
-      if @request.save
-        format.html { redirect_to index_misrequests_path, notice: 'Solicitud aceptada con éxito.' }
-        format.json { render :show, status: :created, location: @persona }
-        format.js
-      else
-        format.html { render :new }
-        format.json { render json: @request.errors, status: :unprocessable_entity }
-        format.js
-      end
-    end
-  end
 
-  def rechazar
-   # redirect_to requests_path(request_id)
-   @request = Request.find(params[:request_id])
-   @request.idus = current_user.id
-    @request.estado = 3
-    respond_to do |format|
-      if @request.save
-        format.html { redirect_to index_misrequests_path, notice: 'Solicitud rechazada con éxito.' }
-        format.json { render :show, status: :created, location: @persona }
-        format.js
-      else
-        format.html { render :new }
-        format.json { render json: @request.errors, status: :unprocessable_entity }
-        format.js
-      end
-    end
-  end
 
   # DELETE /requests/1
   # DELETE /requests/1.json
@@ -135,6 +102,6 @@ class RequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def request_params
-      params.require(:request).permit(:nombre, :telefono, :movil, :producto, :npro, :direccion, :email, :tiposoli, :estado, :idus)
+      params.require(:request).permit(:nombre, :telefono, :movil, :producto, :npro, :direccion, :email, :tiposoli, :estado, :idus, :observacion)
     end
 end
