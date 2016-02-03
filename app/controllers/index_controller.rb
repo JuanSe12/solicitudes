@@ -5,10 +5,9 @@ class IndexController < ApplicationController
     @usuarios = Usuario.all
   end
   def tablerocomando
-    
+    @requests = Request.all
   end
   def organigrama
-    
   end
   def misrequests
     if session[:usuario_id] == nil
