@@ -10,6 +10,9 @@
       </h6>
     </header>
     <section>
+        <b><i>Usuario:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.usuario %></span></i>
+    </section>
+    <section>
       <b><i>Fecha de solicitud:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.created_at.strftime("%d/%m/%Y") %></span></i>
     </section>
     <section>
@@ -20,17 +23,42 @@
       <b><i>&nbsp;&nbsp;Celular:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.movil %>&nbsp;&nbsp;</span></i>
     </section>
     <section>
-      <b><i>Producto:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.producto %></span></i>
-    </section>
-    <section>
-      <b><i>Numero de producto:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.npro %></span></i>
-    </section>
-    <section>
-      <b><i>Dirección:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.direccion %></span></i>
-    </section>
-    <section>
       <b><i>Email:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.email %></span></i>
     </section>
+    <% if @request.tiposoli == 1   %>
+      <section>
+        <b><i>Producto:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.producto %></span></i>
+      </section>
+      <section>
+        <b><i>Numero de producto:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.npro %></span></i>
+      </section>
+      <section>
+        <b><i>Dirección:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.direccion %></span></i>
+      </section>
+    <% elsif @request.tiposoli == 2 %>
+      <section>
+        <b><i>Cuenta destino:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.cuentadestino %></span></i>
+      </section>
+      <section>
+        <b><i>Cliente destino:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.clientedestino %></span></i>
+      </section>
+      <section>
+        <b><i>Entidad destino:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.entidaddestino %></span></i>
+      </section>
+    <% elsif @request.tiposoli == 3  %>
+      <section>
+        <b><i>Producto:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.producto %></span></i>
+      </section>
+      <section>
+        <b><i>Numero de producto:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.npro %></span></i>
+      </section>
+      <section>
+        <b><i>Dirección:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.direccion %></span></i>
+      </section>
+      <section>
+        <b><i>Usuario desde:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= @request.usuariodesde %></span></i>
+      </section>
+    <% end %>
     <section>
       <b><i>Estado actual:&nbsp;&nbsp;<span>&nbsp;&nbsp;</b><%= estados(@request.estado) %></span></i>
     </section> 

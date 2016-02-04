@@ -1,0 +1,72 @@
+<form action="/api/v1/request/create" method="post">
+<div>
+	<p>Tipo de solicitud</p>
+	<select name="tiposoli" onChange="TiposOnChange(this)">
+		<option value="1" >Crear Cuenta</option>
+		<option value="2" >Inscripcion</option>
+		<option value="3" >Segunda Clave</option>
+	</select>
+</div>
+	<p>Usuario: <input type="text" name="usuario" /></p>
+	<p>Su nombre: <input type="text" name="nombre" /></p>
+	<p>Su telefono: <input type="text" name="telefono" /></p>
+	<p>Su movil: <input type="text" name="movil" /></p>
+	<p>Su email: <input type="text" name="email" /></p>
+	<p><input type="number" name="estado" value="0" DISABLED style="display:none"/></p>
+	<p><input type="number" name="idus" value="0" DISABLED style="display:none"/></p>
+<div id="crearcuenta" style="display:;">
+	<p>Su producto: <input type="text" name="producto" /></p>
+	<p>Su npro: <input type="number" name="npro" /></p>
+	<p>Su direccion: <input type="text" name="direccion" /></p>
+</div>
+<div id="inscripcion" style="display:none;">
+	<p>Su cuenta destino: <input type="number" name="cuentadestino" /></p>
+	<p>Su cliente destino: <input type="text" name="clientedestino" /></p>
+	<p>Su entidad destino: <input type="text" name="entidaddestino" /></p>
+</div>
+<div id="segundaclave" style="display:none;">
+	<p>Su producto: <input type="text" name="producto" /></p>
+	<p>Su npro: <input type="number" name="npro" /></p>
+	<p>Su direccion: <input type="text" name="direccion" /></p>
+	<p>Su usuario desde: <input type="date" name="usuariodesde" /></p>
+</div>
+
+<p><input type="submit" /></p>
+</form>
+<script type="text/javascript">
+function TiposOnChange(sel) {
+      if (sel.value=="1"){
+           divC = document.getElementById("crearcuenta");
+           divC.style.display = "";
+
+           divI = document.getElementById("inscripcion");
+           divI.style.display = "none";
+
+           divS = document.getElementById("segundaclave");
+           divS.style.display = "none";
+
+      }else
+      if (sel.value=="2"){
+
+           divC = document.getElementById("crearcuenta");
+           divC.style.display="none";
+
+           divI = document.getElementById("inscripcion");
+           divI.style.display = "";
+
+           divS = document.getElementById("segundaclave");
+           divS.style.display = "none";
+
+      }else
+      if (sel.value=="3"){
+      	divC = document.getElementById("crearcuenta");
+           divC.style.display="none";
+
+           divI = document.getElementById("inscripcion");
+           divI.style.display = "none";
+
+           divS = document.getElementById("segundaclave");
+           divS.style.display = "";
+  }
+}
+</script>

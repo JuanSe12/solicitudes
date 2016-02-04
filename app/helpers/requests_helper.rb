@@ -15,7 +15,9 @@ module RequestsHelper
         if t == 1
             "Crear cuenta".html_safe
         elsif t == 2
-            "Cambiar contraseña".html_safe
+            "Inscripción".html_safe
+        elsif t == 3
+            "Segunda Clave".html_safe   
         end
     
     end

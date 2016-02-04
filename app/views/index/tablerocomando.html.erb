@@ -1,4 +1,4 @@
-<header><h2><b><i>Tablero de comando</i></b></h2></header>
+<h2><b><i>Tablero de comando</i></b></h2>
 
  <% 
  pen = 0
@@ -6,23 +6,23 @@
  re = 0
  as = 0
  @requests.each do |request|
- 	if request.estado == 0
- 		pen = pen+1
- 	elsif request. estado == 1
- 		as = as+1
- 	elsif request. estado == 2
- 		ap = ap+1
- 	elsif request. estado == 3
- 		re = re+1
- 	end
- 		
+    if request.estado == 0
+        pen = pen+1
+    elsif request. estado == 1
+        as = as+1
+    elsif request. estado == 2
+        ap = ap+1
+    elsif request. estado == 3
+        re = re+1
+    end
+        
  end 
  %>
 <script type="text/javascript" charset="utf-8">
 $(function () {
   new Highcharts.Chart({
     chart: { renderTo: 'orders_chart',
- 			plotBackgroundColor: null,
+            plotBackgroundColor: null,
             plotBorderWidth: null,
             plotShadow: false,
             type: 'pie'
@@ -51,7 +51,7 @@ $(function () {
   });
 });
 </script>
-<center><div id="orders_chart" style="width: 560px; height: 300px;"></div>
+<center><div id="orders_chart" style="width: 560px; height: 300px;"></div><hr>
 <!-- Por usuario -->
 <% 
 userp = 0
@@ -68,7 +68,7 @@ todase = 0
 x = pen*100/i
 z = userp*100/i
 %>
-<div class="estau">
+<div class="estau" style="width: 560px">
   <h3>Usuario</h3>
 
     Pendientes: <%= pen %>
