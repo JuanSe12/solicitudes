@@ -120,13 +120,16 @@ module Api
               redirect_to request_path(@request)
             end
           elsif tiposo == "3"
+            @request.producto = nil
+            @request.npro = nil
+            @request.direccion = nil
             @request.cuentadestino = nil
             @request.clientedestino = nil
             @request.entidaddestino = nil
             @request.usuariodesde = params[:usuariodesde]
-            @request.producto = params[:producto]
-            @request.npro = params[:npro]
-            @request.direccion = params[:direccion]
+            @request.producto = params[:prod]
+            @request.npro = params[:np]
+            @request.direccion = params[:dir]
             @request.usuario = params[:usuario]
             @request.nombre = params[:nombre]
             @request.telefono = params[:telefono]
