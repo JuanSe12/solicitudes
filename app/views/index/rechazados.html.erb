@@ -1,45 +1,64 @@
-<h1>Mis solicitudes rechazadas</h1>
+<section id="widget-grid" class="">
+  <div class="row">
+    <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-editbutton="false">
+        <header>
+          <span class="widget-icon">
+            <i class="fa fa-table"></i>
+          </span>
+          <h2>Mis Solicitudes Rechazadas</h2>
+        </header>
+        <div>
+          <div class="jarviswidget-editbox">
+          </div>
+            <div class="widget-body">
+              <div class="table-responsive">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Nombre</th>
+                      <th>Producto</th>
+                      <th>Npro</th>
+                      <th>Direccion</th>
+                      <th>Email</th>
+                      <th>Estado</th>
+                      <th>Tiposoli</th>
+                      <th></th>
+                    </tr>
+                  </thead>
 
-<table class="table table-bordered table-striped table-condensed table-hover smart-form has-tickbox">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Nombre</th>
-      <th>Producto</th>
-      <th>Npro</th>
-      <th>Direccion</th>
-      <th>Email</th>
-      <th>Estado</th>
-      <th>Tiposoli</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @requests.each do |request| %>
-        <%# if current_user.id == request.idus %>
-      <tr>
-        <td><%= request.id %></td>
-        <td><%= request.nombre %></td>
-        <td><%= request.producto %></td>
-        <td><%= request.npro %></td>
-        <td><%= request.direccion %></td>
-        <td><%= request.email %></td>
-        <td><%= estados(request.estado) %></td>
-        <td><%= tipo(request.tiposoli) %></td>
-        <td><%= button_to 'Ver', request, method: :get ,class: "btn btn-default btn-sm"  %></td>
-      </tr>
-      <%# end %>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-<%= will_paginate @requests, renderer: BootstrapPagination::Rails %>
-<br>
-<div class="btn-group">
-     <a href="#" class="btn btn-default disabled"><b>Cantidad:</b> <span class="badge"> <%= @requests.count %></span></a>
-    <a href="<%=  index_misrequests_path %>" class="btn btn-default">Asignadas</a>
-    <a href="<%=  index_aceptados_path %>" class="btn btn-default">Ver aceptadas</a>
-    <a href="<%=  index_rechazados_path %>" class="btn btn-default">Ver rechazadas</a>
-</div>
+                  <tbody>
+                    <% @requests.each do |request| %>
+                        <%# if current_user.id == request.idus %>
+                      <tr>
+                        <td><%= request.id %></td>
+                        <td><%= request.nombre %></td>
+                        <td><%= request.producto %></td>
+                        <td><%= request.npro %></td>
+                        <td><%= request.direccion %></td>
+                        <td><%= request.email %></td>
+                        <td><%= estados(request.estado) %></td>
+                        <td><%= tipo(request.tiposoli) %></td>
+                        <td><%= button_to 'Ver', request, method: :get ,class: "btn btn-info btn-sm bg-color-blue"  %></td>
+                      </tr>
+                      <%# end %>
+                    <% end %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+        </div>
+      </div>
+      <br>
+      <%= will_paginate @requests, renderer: BootstrapPagination::Rails %>
+      <br>
+      <div class="btn-group">
+           <a href="#" class="btn btn-default disabled"><b>Cantidad:</b> <span class="badge"> <%= @requests.count %></span></a>
+          <a href="<%=  index_misrequests_path %>" class="btn btn-default">Asignadas</a>
+          <a href="<%=  index_aceptados_path %>" class="btn btn-default">Ver aceptadas</a>
+          <a href="<%=  index_rechazados_path %>" class="btn btn-default">Ver rechazadas</a>
+      </div>
+    </article>
+  </div>
+</section>
