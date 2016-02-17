@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipoclave: 1
+  maxlongitud: 1
+  minlongitud: 1
+  maxcaracteres: 1
+  mincaracteres: 1
+  maxalfanumerico: 1
+  minalfanumerico: 1
+  maxnumerico: 1
+  minnumerico: 1
+  maxcapital: 1
+  mincapital: 1
+  numeroreintentos: 1
+  diascambios: 1
+
+two:
+  tipoclave: 1
+  maxlongitud: 1
+  minlongitud: 1
+  maxcaracteres: 1
+  mincaracteres: 1
+  maxalfanumerico: 1
+  minalfanumerico: 1
+  maxnumerico: 1
+  minnumerico: 1
+  maxcapital: 1
+  mincapital: 1
+  numeroreintentos: 1
+  diascambios: 1

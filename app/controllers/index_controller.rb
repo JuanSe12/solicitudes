@@ -30,4 +30,7 @@ class IndexController < ApplicationController
     @requests = Request.where(:estado => 3, :idus => current_user.id).paginate(:page => params[:page], :per_page => 7)
     end
   end
+  def parametros
+    
+  end
 end

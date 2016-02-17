@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :parametroclaves
   resources :extras
   resources :registros, :path => 'usuarios'
+  post 'parametroclaves/traer_parametroclaves', to: 'parametroclaves#traer_parametroclaves'
   get 'sessions/create'
 
   get 'sessions/destroy'
@@ -14,6 +16,7 @@ Rails.application.routes.draw do
   get 'index/misrequests'#, :path => 'requests?user_id=request_id&estado=asignada'
     get 'index/aceptados'
       get 'index/rechazados'
+      get 'index/parametros'
 
 #get '/request/:id/update' => 'groups#associate_subgroup_with_org', :as => :associate_subgroup
   

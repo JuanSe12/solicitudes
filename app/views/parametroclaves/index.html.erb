@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Parametroclaves</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipoclave</th>
+      <th>Maxlongitud</th>
+      <th>Minlongitud</th>
+      <th>Maxcaracteres</th>
+      <th>Mincaracteres</th>
+      <th>Maxalfanumerico</th>
+      <th>Minalfanumerico</th>
+      <th>Maxnumerico</th>
+      <th>Minnumerico</th>
+      <th>Maxcapital</th>
+      <th>Mincapital</th>
+      <th>Numeroreintentos</th>
+      <th>Diascambios</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parametroclaves.each do |parametroclafe| %>
+      <tr>
+        <td><%= parametroclafe.tipoclave %></td>
+        <td><%= parametroclafe.maxlongitud %></td>
+        <td><%= parametroclafe.minlongitud %></td>
+        <td><%= parametroclafe.maxcaracteres %></td>
+        <td><%= parametroclafe.mincaracteres %></td>
+        <td><%= parametroclafe.maxalfanumerico %></td>
+        <td><%= parametroclafe.minalfanumerico %></td>
+        <td><%= parametroclafe.maxnumerico %></td>
+        <td><%= parametroclafe.minnumerico %></td>
+        <td><%= parametroclafe.maxcapital %></td>
+        <td><%= parametroclafe.mincapital %></td>
+        <td><%= parametroclafe.numeroreintentos %></td>
+        <td><%= parametroclafe.diascambios %></td>
+        <td><%= link_to 'Show', parametroclafe %></td>
+        <td><%= link_to 'Edit', edit_parametroclafe_path(parametroclafe) %></td>
+        <td><%= link_to 'Destroy', parametroclafe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Parametroclave', new_parametroclafe_path %>

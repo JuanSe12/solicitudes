@@ -1,0 +1,43 @@
+<%= form_for(@parametroclafe) do |f| %>
+<div class="">
+    <%= f.label :tipoclave %><br>
+    <%= f.collection_select :tipoclave, Parametroclave.all, :id, :tipoclave, {prompt: 'Seleccione tipo'}, id: "parametroclafe_id", name: "tiposoli" %>
+  </div>
+<%#= f.select :tipoclave, options_for_select([["primera", "1"], ["segunda", "2"]]), id: "id" %>
+<div class="crearcuenta" style="display:;">
+    <%= f.label :maxlongitud %><br>
+    <%= f.number_field :maxlongitud, id: "maxlongitud" %>
+
+    <%= f.label :minlongitud %><br>
+    <%= f.number_field :minlongitud, id: "minlongitud" %>
+
+</div>
+<div class="inscripcion" style="display:none;">
+    <%= f.label :maxlongitud %><br>
+    <%= f.number_field :maxlongitud, id: "maxlongitud" %>
+
+    <%= f.label :minlongitud %><br>
+    <%= f.number_field :minlongitud, id: "minlongitud" %>
+
+</div>
+<% end %>
+<script type="text/javascript">
+function TiposOnChange(sel) {
+      if (sel.value=="1"){
+           divC = document.getElementById("crearcuenta");
+           divC.style.display = "";
+
+           divI = document.getElementById("inscripcion");
+           divI.style.display = "none";
+
+      }else
+      if (sel.value=="2"){
+
+           divC = document.getElementById("crearcuenta");
+           divC.style.display="none";
+
+           divI = document.getElementById("inscripcion");
+           divI.style.display = "";
+      }
+}
+</script>

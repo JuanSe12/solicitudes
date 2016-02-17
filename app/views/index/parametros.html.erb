@@ -1,0 +1,44 @@
+<div>
+<p>Tipo de solicitud</p>
+<select name="tipoclave" onChange="TiposOnChange(this)">
+	<option value="1" >Primera Clave</option>
+	<option value="2" >Segunda Clave</option>
+</select>
+</div>
+
+<div id="camposvacios" style="display:;">
+<p>Max Longitud</p>
+<input type="number" name="maxlongitud" id="maxlongitud"></input>
+</div>
+
+<div id="camposvacios2" style="display:none;">
+<p>Min Longitud</p>
+<input type="number" name="minlongitud" id="minlongitud"></input>
+</div>
+<p><input type="submit" /></p>
+<script type="text/javascript">
+document.getElementById('maxlongitud').value = '<%= @maxl %>';
+document.getElementById('minlongitud').value = '<%= @minl %>'
+
+function TiposOnChange(sel) {
+      if (sel.value=="1"){
+           divC = document.getElementById("camposvacios");
+           divC.style.display = "";
+
+           
+
+           divI = document.getElementById("camposvacios2");
+           divI.style.display = "none";
+
+      }else
+      if (sel.value=="2"){
+
+           divC = document.getElementById("camposvacios");
+           divC.style.display = "none";
+
+           divI = document.getElementById("camposvacios2");
+           divI.style.display = "";
+           
+       }
+}
+</script>

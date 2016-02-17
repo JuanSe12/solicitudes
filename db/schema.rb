@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160201200105) do
+ActiveRecord::Schema.define(version: 20160217155426) do
+
+  create_table "parametroclaves", force: :cascade do |t|
+    t.integer  "tipoclave",        limit: 4
+    t.integer  "maxlongitud",      limit: 4
+    t.integer  "minlongitud",      limit: 4
+    t.integer  "maxcaracteres",    limit: 4
+    t.integer  "mincaracteres",    limit: 4
+    t.integer  "maxalfanumerico",  limit: 4
+    t.integer  "minalfanumerico",  limit: 4
+    t.integer  "maxnumerico",      limit: 4
+    t.integer  "minnumerico",      limit: 4
+    t.integer  "maxcapital",       limit: 4
+    t.integer  "mincapital",       limit: 4
+    t.integer  "numeroreintentos", limit: 4
+    t.integer  "diascambios",      limit: 4
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
 
   create_table "registros", force: :cascade do |t|
     t.string   "email",      limit: 255
@@ -20,19 +38,24 @@ ActiveRecord::Schema.define(version: 20160201200105) do
   end
 
   create_table "requests", force: :cascade do |t|
-    t.string   "nombre",      limit: 255
-    t.string   "telefono",    limit: 255
-    t.string   "movil",       limit: 255
-    t.string   "producto",    limit: 255
-    t.integer  "npro",        limit: 4
-    t.string   "direccion",   limit: 255
-    t.string   "email",       limit: 255
-    t.integer  "estado",      limit: 4
-    t.integer  "idus",        limit: 4
-    t.integer  "tiposoli",    limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.text     "observacion", limit: 65535
+    t.string   "nombre",         limit: 255
+    t.string   "telefono",       limit: 255
+    t.string   "movil",          limit: 255
+    t.string   "producto",       limit: 255
+    t.integer  "npro",           limit: 4
+    t.string   "direccion",      limit: 255
+    t.string   "email",          limit: 255
+    t.integer  "estado",         limit: 4
+    t.integer  "idus",           limit: 4
+    t.integer  "tiposoli",       limit: 4
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.text     "observacion",    limit: 65535
+    t.integer  "cuentadestino",  limit: 4
+    t.string   "clientedestino", limit: 255
+    t.string   "entidaddestino", limit: 255
+    t.string   "usuario",        limit: 255
+    t.date     "usuariodesde"
   end
 
   create_table "usuarios", force: :cascade do |t|
