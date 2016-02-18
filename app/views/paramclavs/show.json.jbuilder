@@ -1,0 +1,1 @@
+json.extract! @paramclav, :id, :tipoclave, :maxlongitud, :minlongitud, :maxcaracteres, :mincaracteres, :maxalfanumerico, :minalfanumerico, :maxnumerico, :minnumerico, :maxcapital, :mincapital, :numeroreintentos, :diascambios, :created_at, :updated_at

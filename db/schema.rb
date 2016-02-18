@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160217155426) do
+ActiveRecord::Schema.define(version: 20160218224136) do
 
-  create_table "parametroclaves", force: :cascade do |t|
+  create_table "paramclavs", force: :cascade do |t|
     t.integer  "tipoclave",        limit: 4
     t.integer  "maxlongitud",      limit: 4
     t.integer  "minlongitud",      limit: 4

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :parametroclaves
+  resources :paramclavs
   resources :extras
   resources :registros, :path => 'usuarios'
-  post 'parametroclaves/traer_parametroclaves', to: 'parametroclaves#traer_parametroclaves'
+  post 'paramclavs/traer_paramcla', to: 'paramclavs#traer_paramcla'
   get 'sessions/create'
 
   get 'sessions/destroy'
@@ -30,6 +30,7 @@ Rails.application.routes.draw do
 
   match 'extra/update', :action => 'crear', :via => [:get], :controller => "requests", :as => :crearto
 
+  #match 'parametroclaves/update', :action => 'update', :via => [:post], :controller => "parametroclaves", :as => :update
  resources :requests do
   resources :extras
   #
