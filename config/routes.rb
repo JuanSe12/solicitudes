@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
   resources :paramclavs
+  post 'paramclavs/traer_paramcla', to: 'paramclavs#traer_paramcla'
   resources :extras
   resources :registros, :path => 'usuarios'
-  post 'paramclavs/traer_paramcla', to: 'paramclavs#traer_paramcla'
+  
   get 'sessions/create'
 
   get 'sessions/destroy'
@@ -18,26 +19,6 @@ Rails.application.routes.draw do
       get 'index/rechazados'
       get 'index/parametros'
 
-#get '/request/:id/update' => 'groups#associate_subgroup_with_org', :as => :associate_subgroup
-  
-#get 'request/:id', :action => 'aceptar', :via => [:get], :controller => "requests"
-#patch 'request/:id', :action => 'update', :via => [:put], :controller => "requests", as: => :actualizar
-  resources :requests do
-    resources :extras #do
-     # match 'actualiza', :action => 'actualiza', :controller => 'extras', :via => [:get]
-    #end
-  end
-
-  match 'extra/update', :action => 'crear', :via => [:get], :controller => "requests", :as => :crearto
-
-  #match 'parametroclaves/update', :action => 'update', :via => [:post], :controller => "parametroclaves", :as => :update
- resources :requests do
-  resources :extras
-  #
-   match 'reclamar', :action => 'reclamar', :controller => 'requests', :via => [:get]
-  #match 'reclamar_request' => 'request#reclamar', :via => [:get], :as => 'reclamar_request'
-  #match 'gallery_:id' => 'gallery#show', :via => [:get], :as => 'gallery_show'
-end
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
       resources :requests
@@ -56,6 +37,8 @@ end
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :sessions, only: [:create, :destroy]
+
+  
 
   #devise_scope :user do
    # get '/users/sign_out' => 'devise/sessions#destroy'

@@ -1,44 +1,37 @@
-<div>
 <p>Tipo de solicitud</p>
-<select name="tipoclave" onChange="TiposOnChange(this)">
+<select name="tiposoli" onChange="TiposOnChange(this)">
 	<option value="1" >Primera Clave</option>
 	<option value="2" >Segunda Clave</option>
 </select>
-</div>
 
-<div id="camposvacios" style="display:;">
 <p>Max Longitud</p>
-<input type="number" name="maxlongitud" id="maxlongitud"></input>
-</div>
-
-<div id="camposvacios2" style="display:none;">
+<input type="number" name="maxlongitud"></input>
 <p>Min Longitud</p>
-<input type="number" name="minlongitud" id="minlongitud"></input>
-</div>
+<input type="number" name="minlongitud"></input>
+
+<p>Max Caracteres</p>
+<input type="number" name="maxcaracteres"></input>
+<p>Min Caracteres</p>
+<input type="number" name="mincaracteres"></input>
+
+<p>Max Alfanumerico</p>
+<input type="number" name="maxalfanumerico"></input>
+<p>Min Alfanumerico</p>
+<input type="number" name="minalfanumerico"></input>
+
+<p>Max Numerico</p>
+<input type="number" name="maxnumerico"></input>
+<p>Min Numerico</p>
+<input type="number" name="maxnumerico"></input>
+
+<p>Max Capital</p>
+<input type="number" name="maxcapital"></input>
+<p>Min capital</p>
+<input type="number" name="maxcapital"></input>
+
+<p>Numero Reintentos</p>
+<input type="number" name="numeroreintentos"></input>
+
+<p>Dias Cambios</p>
+<input type="number" name="diascambios"></input>
 <p><input type="submit" /></p>
-<script type="text/javascript">
-document.getElementById('maxlongitud').value = '<%= @maxl %>';
-document.getElementById('minlongitud').value = '<%= @minl %>'
-
-function TiposOnChange(sel) {
-      if (sel.value=="1"){
-           divC = document.getElementById("camposvacios");
-           divC.style.display = "";
-
-           
-
-           divI = document.getElementById("camposvacios2");
-           divI.style.display = "none";
-
-      }else
-      if (sel.value=="2"){
-
-           divC = document.getElementById("camposvacios");
-           divC.style.display = "none";
-
-           divI = document.getElementById("camposvacios2");
-           divI.style.display = "";
-           
-       }
-}
-</script>

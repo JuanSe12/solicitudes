@@ -4,8 +4,7 @@
     <%= f.label :tipoclave %><br>
     <%= f.collection_select :tipoclave, Paramclav.all, :id, :tipoclave, {prompt: 'Seleccione tipo'} %>
   </div>
-  <%= f.hidden_field :id, id: "muestra" %>
-  <input type="hidden" value="<%= :id %>", id="muetra"></input>
+
   <div class="field">
     <%= f.label :maxlongitud %><br>
     <%= f.number_field :maxlongitud, id: "maxlongitud" %>
@@ -14,46 +13,7 @@
     <%= f.label :minlongitud %><br>
     <%= f.number_field :minlongitud, id: "minlongitud"  %>
   </div>
-  <div class="field">
-    <%= f.label :maxcaracteres %><br>
-    <%= f.number_field :maxcaracteres, id: "maxcaracteres"  %>
-  </div>
-  <div class="field">
-    <%= f.label :mincaracteres %><br>
-    <%= f.number_field :mincaracteres, id: "mincaracteres"  %>
-  </div>
-  <div class="field">
-    <%= f.label :maxalfanumerico %><br>
-    <%= f.number_field :maxalfanumerico, id: "maxalfanumerico" %>
-  </div>
-  <div class="field">
-    <%= f.label :minalfanumerico %><br>
-    <%= f.number_field :minalfanumerico, id: "minalfanumerico" %>
-  </div>
-  <div class="field">
-    <%= f.label :maxnumerico %><br>
-    <%= f.number_field :maxnumerico, id: "maxnumerico" %>
-  </div>
-  <div class="field">
-    <%= f.label :minnumerico %><br>
-    <%= f.number_field :minnumerico, id: "minnumerico" %>
-  </div>
-  <div class="field">
-    <%= f.label :maxcapital %><br>
-    <%= f.number_field :maxcapital, id: "maxcapital" %>
-  </div>
-  <div class="field">
-    <%= f.label :mincapital %><br>
-    <%= f.number_field :mincapital, id: "mincapital" %>
-  </div>
-  <div class="field">
-    <%= f.label :numeroreintentos %><br>
-    <%= f.number_field :numeroreintentos, id: "numeroreintentos" %>
-  </div>
-  <div class="field">
-    <%= f.label :diascambios %><br>
-    <%= f.number_field :diascambios, id: "diascambios" %>
-  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

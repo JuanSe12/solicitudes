@@ -5,7 +5,7 @@
 
 $(document).on 'page:change', ->  #cuando cargue de pagina cargue todo lo que hay en el documento
     
-    traer_id_maxlongitud_minlongitud_maxcaracteres_mincaracteres_maxalfanumerico_minalfanumerico_maxnumerico_minnumerico_maxcapital_mincapital_numeroreintentos_diascambios = (id) -> #nos trae la cantidad y valor del producto ,,con el id se sabe cual
+    traer_maxlongitud_minlongitud = (id) -> #nos trae la cantidad y valor del producto ,,con el id se sabe cual
         $.ajax   #llamada a ajax
             url: "/paramclavs/traer_paramcla"   #traer_producto  seria el metod en el controlador
             dataType: 'json'           #tipo de dato es un json   
@@ -25,21 +25,18 @@ $(document).on 'page:change', ->  #cuando cargue de pagina cargue todo lo que ha
                 $('#mincapital').val(data.mincapital)
                 $('#numeroreintentos').val(data.numeroreintentos)
                 $('#diascambios').val(data.diascambios)
+
+
     
     $('#paramclav_tipoclave').change ->              #cuando cambie de opcion en el select se ejecuta este evento
         if @value
-            traer_id_maxlongitud_minlongitud_maxcaracteres_mincaracteres_maxalfanumerico_minalfanumerico_maxnumerico_minnumerico_maxcapital_mincapital_numeroreintentos_diascambios(@value) 
+            traer_maxlongitud_minlongitud(@value) 
             
             
         else
             calcular_total()
             $('.clean').text(0) #si el valor esta nill la clase .clean quedara en 0
-            
-            
-            
-    
-    $('input#sell_cantidad').keyup ->  #traigo el id sell_cantidad y keyup captura todo cuando quitamos el dedo de la tecla      
-        calcular_total()
+
     
     
     
